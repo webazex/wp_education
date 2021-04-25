@@ -21,12 +21,15 @@
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
 define( 'DB_NAME', 'webazex_dsb02' );
+//define( 'DB_NAME', 'education' );
 
 /** Имя пользователя MySQL */
 define( 'DB_USER', 'webazex_dsb02' );
+//define( 'DB_USER', 'education' );
 
 /** Пароль к базе данных MySQL */
 define( 'DB_PASSWORD', 'Education*001' );
+//define( 'DB_PASSWORD', 'education' );
 
 /** Имя сервера MySQL */
 define( 'DB_HOST', 'localhost' );
@@ -63,7 +66,7 @@ define( 'NONCE_SALT',       'Jf-*tOlvI|MS`$Li%UF^-*0Nu1o/QVKZY7w>buy&y|f{R]6pNkq
  * Можно установить несколько сайтов в одну базу данных, если использовать
  * разные префиксы. Пожалуйста, указывайте только цифры, буквы и знак подчеркивания.
  */
-$table_prefix = 'acEd_';
+$table_prefix = 'aced_';
 
 /**
  * Для разработчиков: Режим отладки WordPress.
@@ -76,7 +79,7 @@ $table_prefix = 'acEd_';
  *
  * @link https://ru.wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', false);
 
 /* Это всё, дальше не редактируем. Успехов! */
 

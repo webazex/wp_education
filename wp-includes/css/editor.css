@@ -231,7 +231,7 @@ div.mce-tab:focus {
 /* TinyMCE panel */
 div.mce-panel {
 	border: 0;
-	background: #fff;
+	background: #dcdcdc;
 }
 
 .mce-panel.mce-menu {
