@@ -15,8 +15,8 @@ get_header();
                             $phone_2 = get_field('phone-2');
                             $mail = get_field('mail-group');
                             ?>
-                        <div class="contacts__row-item">
-                            <div class="row-item__box-icon">
+                        <div class="contacts__row-item mb10">
+                            <div class="row-item__box-icon as-fend">
                                 <img class="box-icon__img" src="<?echo $adress['img']; ?>" alt="">
                             </div>
                             <div class="row-item__content">
@@ -24,9 +24,9 @@ get_header();
                                 <p class="content__text"><?php echo $adress['text']; ?></p>
                             </div>
                         </div>
-                        <div class="contacts__row-item align-items-fend">
+                        <div class="contacts__row-item mb0">
                             <div class="row-item__box-icon empty-icon"></div>
-                            <div class="content__social-row">
+                            <div class="content__social-row mb0">
                                 <a href="<?echo $phone_2['social-link-group']['link']; ?>">
                                     <img class="social-row__icon" src="<?echo $phone_2['social-link-group']['icon']; ?>" alt="">
                                 </a>

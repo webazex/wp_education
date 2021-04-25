@@ -433,6 +433,7 @@ header, main, section, footer {
 
 .content__title-h1 {
     margin-bottom: 40px;
+    padding-bottom: 0;
 }
 
 .title-h1__text {
@@ -461,7 +462,10 @@ header, main, section, footer {
 .ul__item:last-child {
     margin-bottom: 0;
 }
-
+.ul__item::marker {
+    height: auto;
+    display: flex;
+}
 .content__btn, .content__btn-more, .btn-submit {
     width: 230px;
     height: 50px;
@@ -1049,7 +1053,7 @@ textarea {
     justify-content: flex-start;
     align-items: center;
 }
-.simple {}
+
 .grid-area__left-col {
     border-color: #2878EB;
 }
@@ -1361,7 +1365,7 @@ p strong {
     display: inline-block;
 }
 .content__text-top {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .content__text {
     color: #161223;
@@ -1371,7 +1375,7 @@ p strong {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 .content__social-row a {margin-right: 10px;}
 .content__social-row a:last-child {margin-right: 0;}
@@ -1386,7 +1390,7 @@ p strong {
      margin-right: 0;
      margin-left: 0;
  }
- .callback__form .btn-submit {align-self: flex-start; margin-top: 15px;}
+ .callback__form .btn-submit {align-self: center; margin-top: 15px;}
  .callback__form .form__desc, .form__desc > p {
      color: #161223;
      text-align: left;
@@ -1700,6 +1704,9 @@ p strong {
 }
 
 @media (max-width: 780px) {
+    .bg-home-page__content {
+        margin: 70px 0;
+    }
     .content__grid-row-default {
         grid-template-areas: "text_one img" "text_two img" "text_three text_three" "text_four text_four" "text_five text_five";
     }
@@ -1757,7 +1764,9 @@ p strong {
     .header-grid__text {
         font-size: 1.33333333333rem;
     }
-
+    .content__title-h1 {
+        margin-bottom: 40px;
+    }
     .ul__item, .row-item__text {
         font-size: 1.16666666667rem;
     }
@@ -1959,7 +1968,12 @@ p strong {
         padding-left: 20px;
         padding-right: 20px;
     }
-
+    .bg-home-page__content {
+        margin: 40px 0;
+    }
+    .content__title-h1 {
+        margin-bottom: 25px;
+    }
     .site-size__header-grid {
         grid-row-gap: 15px;
     }
@@ -2211,7 +2225,7 @@ p strong {
         font-style: normal;
         font-weight: 500;
         font-size: 1rem;
-        line-height: 2rem;
+        line-height: 1.66666666667rem;
     }
     .row-item__box-icon {
         min-width: 45px;
@@ -2297,4 +2311,13 @@ p strong {
 }
 .align-items-fend {
     align-items: flex-end;
+}
+.mb0 {
+    margin-bottom: 0;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.as-fend {
+    align-self: flex-end;
 }
