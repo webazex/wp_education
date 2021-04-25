@@ -1174,8 +1174,8 @@ textarea {
 }
 p strong {
     font-style: normal;
-    /*font-weight: bold;
-    font-size: inherit;*/
+    font-weight: bold;
+    font-size: inherit;
     line-height: inherit;
 }
 .diplom-content > p > span, .diplom-content > p > strong {
