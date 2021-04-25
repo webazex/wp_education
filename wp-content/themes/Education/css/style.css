@@ -1049,7 +1049,7 @@ textarea {
     justify-content: flex-start;
     align-items: center;
 }
-
+.simple {}
 .grid-area__left-col {
     border-color: #2878EB;
 }
