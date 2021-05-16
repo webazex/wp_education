@@ -249,7 +249,7 @@ get_header();
                                 <span class="row-questions__corner">
                                     <?php echo($q1['number']); ?>
                                 </span>
-        <p><?php echo($q1['question']); ?></p>
+        <?php echo($q1['question']); ?>
     </div><?php endif;  if(empty($q2['number']) and empty($q2['question'])):?>
                             <div class="left-col__row-questions default">
                             <span class="row-questions__corner">
@@ -262,7 +262,7 @@ get_header();
                             <span class="row-questions__corner">
                                 <?php echo($q2['number']); ?>
                             </span>
-        <p><?php echo($q2['question']); ?></p>
+        <?php echo($q2['question']); ?>
     </div> <?php endif; if(empty($q3['number']) and empty($q3['question'])): ?>
                             <div class="left-col__row-questions default">
                             <span class="row-questions__corner">
@@ -275,7 +275,7 @@ get_header();
                             <span class="row-questions__corner">
                                 <?php echo($q3['number']); ?>
                             </span>
-        <p> <?php echo($q3['question']); ?></p>
+        <?php echo($q3['question']); ?>
     </div>
 <?php endif; if(empty($q4['number']) and empty($q4['question'])):?>
                             <div class="left-col__row-questions default">
@@ -289,7 +289,7 @@ get_header();
                             <span class="row-questions__corner">
                                 <?php echo($q4['number']); ?>
                             </span>
-        <p><?php echo($q4['question']); ?></p>
+        <?php echo($q4['question']); ?>
     </div>
 <?php endif; if(empty($q5['number']) and empty($q5['question'])): ?>
                             <div class="left-col__row-questions default">
@@ -303,7 +303,7 @@ get_header();
                             <span class="row-questions__corner">
                                 <?php echo($q5['number']);?>
                             </span>
-        <p><?php echo($q5['question']);?></p>
+        <?php echo($q5['question']);?>
     </div> <?php endif; ?>
                         </div>
                         <div class="row-default__right-col bg-questions" style="background-image: url('<?php the_field('bg-questions'); ?>')"></div>
@@ -369,7 +369,7 @@ get_header();
                 </form>
             </div>
         </section>
-        <section>
+        <section class="section-seo-text">
             <div class="site-size">
                 <div class="site-size__content">
                     <?php the_field('about__title-seo');?>

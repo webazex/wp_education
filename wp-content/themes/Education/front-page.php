@@ -22,14 +22,14 @@ get_header('home');
                 echo '';
                 endif;?>
                 <ul class="content__ul">
-                    <li class="ul__item"><?php the_field('t1'); ?></li>
-                    <li class="ul__item"><?php the_field('t2'); ?></li>
-                    <li class="ul__item"><?php the_field('t3'); ?></li>
-                    <li class="ul__item"><?php the_field('t4'); ?></li>
+                    <li class="ul__item"><span class="item__li-icon"></span><?php the_field('t1'); ?></li>
+                    <li class="ul__item"><span class="item__li-icon"></span><?php the_field('t2'); ?></li>
+                    <li class="ul__item"><span class="item__li-icon"></span><?php the_field('t3'); ?></li>
+                    <li class="ul__item"><span class="item__li-icon"></span><?php the_field('t4'); ?></li>
                 </ul>
-                <button class="content__btn-more">
+                <a href="<?php the_field('link_to_program');?>" class="content__btn-more">
                     <span class="btn-more__text">Детальнее про программу</span>
-                </button>
+                </a>
             </div>
             <div class="bg-home-page__img-right" style="background: url(<?php the_field('bg-home-page__img-right'); ?>);"></div>
         </div>
@@ -79,7 +79,7 @@ get_header('home');
             </form>
         </div>
     </section>
-    <section>
+    <section class="section-seo-text">
         <div class="site-size">
             <div class="site-size__content">
                 <?php the_field('home__title-seo');?>

@@ -44,6 +44,7 @@
             </div>
         </div>
     </div>
+    <div id="up" class="scrollUp"><span>↑</span></div>
 </footer>
 <?php wp_footer(); ?>
 </body>

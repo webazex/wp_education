@@ -90,13 +90,13 @@ $(document).ready(function () {
             data: $("#"+idForm).serialize(),  // Сеарилизуем объект
             success: function(response) { //Данные отправлены успешно
 
-                let res = '<div class="content__p-submit-container"><span class="container__close-icon"></span><p>Отправлено</p></div>';
+                let res = '<div class="content__p-submit-container successed"><span class="container__close-icon">x</span><p>Отправлено</p></div>';
                 $('.popups__content').append(res);
                 $('.popups').show(300);
 
             },
             error: function(response) { // Данные не отправлены
-                let res = '<div class="content__p-submit-container error-bg"><span class="container__close-icon"></span><p>Ошибка отправки</p></div>';
+                let res = '<div class="content__p-submit-container error-bg"><span class="container__close-icon">x</span><p>Ошибка отправки</p></div>';
                 $('.popups__content').append(res);
                 $('.popups').show(300);
             },
@@ -109,5 +109,21 @@ $(document).ready(function () {
     $('.popups__content').on('click', '.container__close-icon', function () {
         $('.popups').hide(300);
         $('.popups__content').html('');
+    });
+    $('#up').click(function() {
+        $("html, body").animate({
+            scrollTop:0
+        },1000);
+    })
+    $(window).scroll(function() {
+        // если пользователь прокрутил страницу более чем на 200px
+        if ($(this).scrollTop()>200) {
+            // то сделать кнопку scrollup видимой
+            $('#up').fadeIn();
+        }
+        // иначе скрыть кнопку scrollup
+        else {
+            $('#up').fadeOut();
+        }
     });
 });
