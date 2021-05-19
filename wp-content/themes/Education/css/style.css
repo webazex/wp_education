@@ -1807,7 +1807,7 @@ p strong {
         margin-top: 0;
         height: 60px;
     }
-    .menu_item_wpglobus_menu_switch {
+    li.menu_item_wpglobus_menu_switch {
         position: relative;
         top: unset;
         right: unset;
