@@ -20,19 +20,19 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define( 'DB_NAME', 'webazex_dsb02' );
-//define( 'DB_NAME', 'education' );
+// define( 'DB_NAME', 'webazex_dsb02' );
+define( 'DB_NAME', 'cogitol_education' );
 
 /** Имя пользователя MySQL */
-define( 'DB_USER', 'webazex_dsb02' );
-//define( 'DB_USER', 'education' );
+// define( 'DB_USER', 'webazex_dsb02' );
+define( 'DB_USER', 'cogitol_education' );
 
 /** Пароль к базе данных MySQL */
-define( 'DB_PASSWORD', 'Education*001' );
-//define( 'DB_PASSWORD', 'education' );
+// define( 'DB_PASSWORD', 'Education*001' );
+define( 'DB_PASSWORD', '@6NU6x8gs!' );
 
 /** Имя сервера MySQL */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'cogitol.mysql.tools' );
 
 /** Кодировка базы данных для создания таблиц. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -80,7 +80,7 @@ $table_prefix = 'aced_';
  * @link https://ru.wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false);
-
+//define('ALLOW_UNFILTERED_UPLOADS', true);
 /* Это всё, дальше не редактируем. Успехов! */
 
 /** Абсолютный путь к директории WordPress. */
