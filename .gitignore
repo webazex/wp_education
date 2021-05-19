@@ -22,3 +22,5 @@ node_modules/
 *.sql
 *.sqlite
 wp-content/themes/Education/img/����.jpg
+wp-config.php
+.gitignore
