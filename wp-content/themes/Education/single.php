@@ -7,7 +7,9 @@ get_header('');
                 <h2 class="content__title">
                     <span class="title__text"><?php the_title(); ?></span>
                 </h2>
-                <?php the_content(); ?>
+                <div class="content__blog">
+                    <?php the_content(); ?>
+                </div>
             </div>
         </div>
     </main>

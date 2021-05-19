@@ -352,29 +352,29 @@ h4 {
     text-decoration: none;
 }
 .header-grid__logo-link > img {
-    max-width: 100%;
+    /*max-width: 100%;*/
+    max-width: 340px;
     width: auto;
 }
 .header-grid__phones, .phones__phone {
     display: flex;
-    /*justify-content: flex-start;*/
+    justify-content: flex-start;
     /*justify-content: space-around;*/
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     height: 100%;
     grid-area: phones;
-    padding: 0 15px;
+    /*padding: 0 25px 0 0;*/
 }
 
 .phones__phone {
-    /*margin-right: 32px;*/
     justify-content: flex-start;
     grid-area: none;
     height: auto;
     text-decoration: none;
     padding: 0;
 }
-
+.phones__phone:first-child {margin-right: 20px;}
 .phone__icon {
     width: 20px;
     height: 20px;
@@ -1734,6 +1734,9 @@ p strong {
 }
 /*===404==page====end====*/
 /*=================ADAPTIVE===START====*/
+@media(max-width: 1380px){
+
+}
 @media (max-width: 1369px) {
     .content__grid-row-default {
         grid-template-columns: 1fr 350px;

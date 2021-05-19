@@ -2,7 +2,7 @@
     <div class="popups__content"></div>
 </div>
 <footer>
-    <div class="site-size bg-footer">
+    <div class="site-size bg-footer" style="background-image: url('<?php the_field('bg_footer', 15);?>');">
         <div class="site-size__footer">
             <div class="footer__content">
                 <?php
@@ -28,17 +28,23 @@
                 ?>
                 <div class="content__row-footer">
                     <div class="row-footer__phones-block">
-                        <a href="tel:+380939302233" class="phones-block__phone">
+                        <?php
+                            $phonelink1 = getlinkPhones(get_field('number-1', 15));
+                            $phonelink2 = getlinkPhones(get_field('number-2', 15));
+                        ?>
+                        <a href="tel:<?php echo $phonelink1; ?>" class="phones-block__phone">
                             <span class="phone__icon"></span>
                             <span class="phone__number-footer"><?php the_field('number-1', 15);?></span>
                         </a>
-                        <a href="tel:+380939302233" class="phones-block__phone">
+                        <a href="tel:<?php echo $phonelink2; ?>" class="phones-block__phone">
                             <span class="phone__icon"></span>
                             <span class="phone__number-footer"><?php the_field('number-2', 15);?></span>
                         </a>
                     </div>
                     <div class="row-footer__copyright-block">
-                        <span class="copyright-block__text">©Logotip <?php echo(date("Y")); ?>. Все права защищены!</span>
+                        <div class="copyright-block__text">
+                            <?php echo renderCopyright(); ?>
+                        </div>
                     </div>
                 </div>
             </div>

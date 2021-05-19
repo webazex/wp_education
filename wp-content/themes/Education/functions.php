@@ -1,44 +1,52 @@
 <?php
 //===get===theme===stiles
-add_action( 'wp_head', 'sendDataJson' );
-function sendDataJson(){
-	$arData = array(
-		'submitMessage' => "Done"
-	);
-	echo '<script> var JsonData ='.json_encode($arData).'</script>';
+add_action('wp_head', 'sendDataJson');
+function sendDataJson()
+{
+    $arData = array(
+        'submitMessage' => "Done"
+    );
+    echo '<script> var JsonData =' . json_encode($arData) . '</script>';
 }
-function educationThemeStyles() {
-    wp_enqueue_style( 'education',  get_template_directory_uri().'/css/style.css');
-}
-add_action( 'wp_enqueue_scripts', 'educationThemeStyles' );
 
-function educationAdminStyles(){
-    wp_enqueue_style("style-admin",get_template_directory_uri().'/css/admin.css');
+function educationThemeStyles()
+{
+    wp_enqueue_style('education', get_template_directory_uri() . '/css/style.css');
 }
+
+add_action('wp_enqueue_scripts', 'educationThemeStyles');
+
+function educationAdminStyles()
+{
+    wp_enqueue_style("style-admin", get_template_directory_uri() . '/css/admin.css');
+}
+
 add_action('admin_head', 'educationAdminStyles');
 
 //===get===theme===scripts
-function educationThemeScripts() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', false, null, true );
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
+function educationThemeScripts()
+{
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', false, null, true);
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('script-name', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
-add_action( 'wp_enqueue_scripts', 'educationThemeScripts' );
+
+add_action('wp_enqueue_scripts', 'educationThemeScripts');
 
 //===add===theme===supports
-add_theme_support( 'title-tag' );
+add_theme_support('title-tag');
 add_theme_support('widgets');
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
 
 //===add=menus===area===
-add_action( 'after_setup_theme', function(){
-    register_nav_menus( [
+add_action('after_setup_theme', function () {
+    register_nav_menus([
         'header_menu' => 'Меню в шапке',
         'footer_menu' => 'Меню в подвале'
-    ] );
-} );
+    ]);
+});
 //===breadcrumbs===kama
 /**
  * Хлебные крошки для WordPress (breadcrumbs)
@@ -241,15 +249,15 @@ class Kama_Breadcrumbs
                                 foreach ((array)$prior_terms as $term_id) {
                                     $filter_field = is_numeric($term_id) ? 'term_id' : 'slug';
                                     $_terms = wp_list_filter($terms, array($filter_field => $term_id));
-
                                     if ($_terms) {
                                         $term = array_shift($_terms);
                                         break;
                                     }
                                 }
                             } else
-                                $term = array_shift($terms);
-
+                                $termO = array_shift($terms);
+                            $termO->slug = '';
+                            $termO->name = '';
                             break;
                         }
                     }
@@ -293,7 +301,7 @@ class Kama_Breadcrumbs
                         $tax_label = $GLOBALS['wp_taxonomies'][$term->taxonomy]->labels->name;
                         $out = $this->_add_title('', $term, sprintf($loc->tax_tag, $post_label, $tax_label, esc_html($term->name)));
                     }
-                } // древовидная такса (рибрики)
+                } // древовидная такса (рубрики)
                 else {
                     if (!$out = apply_filters('term_tax_crumbs', '', $term, $this)) {
                         $_crumbs = $this->_tax_crumbs($term, 'parent');
@@ -404,29 +412,32 @@ class Kama_Breadcrumbs
     }
 
 }
-add_filter('kama_breadcrumbs_default_args', function($args){
-    $args['on_front_page']   = 0;
+
+add_filter('kama_breadcrumbs_default_args', function ($args) {
+    $args['on_front_page'] = 0;
     return $args;
-} );
+});
 
 
 // удаляет H2 из шаблона пагинации
-add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
-function my_navigation_template( $template, $class ){
-	/*
-	Вид базового шаблона:
-	<nav class="navigation %1$s" role="navigation">
-		<h2 class="screen-reader-text">%2$s</h2>
-		<div class="nav-links">%3$s</div>
-	</nav>
-	*/
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2);
+function my_navigation_template($template, $class)
+{
+    /*
+    Вид базового шаблона:
+    <nav class="navigation %1$s" role="navigation">
+        <h2 class="screen-reader-text">%2$s</h2>
+        <div class="nav-links">%3$s</div>
+    </nav>
+    */
 
-	return '
+    return '
 	<nav class="navigation %1$s webazex-pagination" role="navigation">
 		<div class="nav-links webazex-pagination__row">%3$s</div>
 	</nav>    
 	';
 }
+
 //====remove p tags in img
 
 // gets rid of p tags around images when using the WYSIWYG advanced custom fields
@@ -437,20 +448,64 @@ function my_navigation_template( $template, $class ){
  * @param type $content
  * @return type
  */
-function onwp_remove_img_ptags_func( $content ){
-	return preg_replace('/<p>\s*(<a[^>]+>)?\s*(<img[^>]+>)\s*(a>)?\s*<\/p>/iU', '\1\2\3', $content);
+function onwp_remove_img_ptags_func($content)
+{
+    return preg_replace('/<p>\s*(<a[^>]+>)?\s*(<img[^>]+>)\s*(a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
+
 add_filter('the_content', 'onwp_remove_img_ptags_func');
 ## отключаем создание миниатюр файлов для указанных размеров
-add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
-function delete_intermediate_image_sizes( $sizes ){
-	// размеры которые нужно удалить
-	return array_diff( $sizes, [
-		'medium_large',
-		'large',
-		'1536x1536',
-		'2048x2048',
-		'150x150',
-		'300x158',
-	] );
+add_filter('intermediate_image_sizes', 'delete_intermediate_image_sizes');
+function delete_intermediate_image_sizes($sizes)
+{
+    // размеры которые нужно удалить
+    return array_diff($sizes, [
+        'medium_large',
+        'large',
+        '1536x1536',
+        '2048x2048',
+        '150x150',
+        '300x158',
+    ]);
+}
+
+function getlinkPhones($phone)
+{
+    $phoneToLink = "+38" . str_replace(" ", '', str_replace("-", '', $phone));
+    return $phoneToLink;
+}
+
+function setLinkToStr($str, $link)
+{
+    $s = "~n~";
+    $e = "~/n~";
+    $linkS = '<a href="' . $link . '" rel="nofollow" class="copyright-block__link">';
+    $linkE = '</a>';
+    $newStr = str_replace($s, $linkS, $str);
+    $retStr = str_replace($e, $linkE, $newStr);
+    return $retStr;
+
+}
+
+function setDateToStr()
+{
+    $thisDate = date("Y");
+    $copystr = get_field('copyright', 15);
+    $str = str_replace("#yYy#", $thisDate, $copystr);
+    return $str;
+}
+
+function renderCopyright()
+{
+    $copyright = "";
+    $strDate = setDateToStr();
+    $switch = get_field('is_link', 15);
+    if ($switch == "1"):
+        $href = get_field('link_c', 15);
+        $copyright = setLinkToStr($strDate, $href);
+    else:
+        $strClear = str_replace("~n~", '', $strDate);
+        $copyright = str_replace("~/n~", '', $strClear);
+    endif;
+    return $copyright;
 }

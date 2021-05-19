@@ -1,6 +1,6 @@
 <?php
 $headers = "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Письмо с сайта: http://dsb02.webazex.beget.tech/\r\n";
+$headers .= "From: Письмо с сайта: https://pl-education.com.ua/\r\n";
 $headers .= "Reply-To: reply-to@example.com\r\n";
 require $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
 //ini_set( 'error_reporting', E_ALL );
