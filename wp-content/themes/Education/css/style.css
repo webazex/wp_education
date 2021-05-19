@@ -1987,6 +1987,11 @@ p strong {
 }
 
 @media (max-width: 768px) {
+    .site-size__header-grid {
+    "logo logo phones phones phones phones"
+    "text text text text text mobmenu";
+    }
+    .header-grid__logo-link > img {max-width: 200px;}
     h1, .content__blog h1 {
         font-size: 2.5rem;
         line-height: 3rem;
