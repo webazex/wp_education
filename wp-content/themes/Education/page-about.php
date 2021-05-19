@@ -358,12 +358,12 @@ get_header();
             <div class="site-size bg-contacts" style="background-image: url('<?php the_field('bg-contacts_about');?>');">
                 <?php the_field('h2_callback-form_about'); ?>
                 <form action="" method="post" id="oForm" data-sender="<?php echo(get_template_directory_uri().'/back/mail/sender.php'); ?>">
-                    <input type="text" name="fio" required="required" placeholder="Имя">
-                    <input type="tel" name="tel" required="required" placeholder="Номер телефона">
-                    <textarea name="text" placeholder="Ваш вопрос? (Не обязательно)"></textarea>
+                    <input type="text" name="fio" required="required" placeholder="<?php the_field('name_p', 15);?>">
+                    <input type="tel" name="tel" required="required" placeholder="<?php the_field('phone_p', 15);?>">
+                    <textarea name="text" placeholder="<?php the_field('desc_p', 15);?>"></textarea>
                     <input type="hidden" value="oForm" name="type">
                     <button type="submit" class="btn-submit">
-                        <span class="btn-submit__text">Отправить</span>
+                        <span class="btn-submit__text"><?php the_field('s-btn_text', 15);?></span>
                     </button>
                     <div class="form__desc"><?php the_field('form__desc_about');?></div>
                 </form>

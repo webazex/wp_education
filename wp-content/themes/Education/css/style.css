@@ -466,7 +466,17 @@ h4 {
     background-color: #0387d1;
     display: block;
 }
-
+.menu_item_wpglobus_menu_switch:hover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_item_wpglobus_menu_switch:hover:after {
+    content: none;
+}
+.sub_menu_item_wpglobus_menu_switch:hover:after {
+    content: none;
+}
 /*===header================end*/
 /*HOME-PAGE-START*/
 /*===first-section=start=*/

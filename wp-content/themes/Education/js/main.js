@@ -20,7 +20,11 @@ $(document).ready(function () {
             $('#menuH').css({'display':'flex'});
         }
     });
-
+    $(window).resize(function() {
+        if(($('.header-grid__container-mob').is(':visible') !== true)) {
+            $('#menuH').css({'display': 'flex'});
+        }
+    });
     $('.faq__row').click(function () {
         var q = $(this).children('.row__container-q');
         var a = $(this).children('.row__container-a');

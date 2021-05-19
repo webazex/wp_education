@@ -61,6 +61,7 @@ add_action('after_setup_theme', function () {
 function kama_breadcrumbs($sep = ' » ', $l10n = array(), $args = array())
 {
     $kb = new Kama_Breadcrumbs;
+    $l10n = localizeBreadcrumbs();
     echo $kb->get_crumbs($sep, $l10n, $args);
 }
 
@@ -68,6 +69,20 @@ class Kama_Breadcrumbs
 {
 
     public $arg;
+
+    /**
+     * @param mixed $homePageTxt
+     */
+    //new localize func
+//    public function translateBreadcrumbs()
+//    {
+//        $this->homePageTxt = get_field("home_br_text", 15);
+//        print_r($_SERVER);
+//    }
+
+    /**
+     * @param mixed $l10n
+     */
 
     // Локализация
     static $l10n = array(
@@ -417,8 +432,24 @@ add_filter('kama_breadcrumbs_default_args', function ($args) {
     $args['on_front_page'] = 0;
     return $args;
 });
-
-
+//===================add breadcrumbs localize
+function localizeBreadcrumbs(){
+    return array(
+        'home' => get_field('home_br_text', 15),
+        'paged' => get_field('paged', 15).' %d',
+        '_404' => get_field('not-found', 15),
+        'search' => get_field('search', 15).' - <b>%s</b>',
+        'author' => get_field('author', 15).': <b>%s</b>',
+        'year' => get_field('year', 15).' <b>%d</b>',
+        'month' => get_field('month', 15).': <b>%s</b>',
+        'day' => get_field('day', 15),
+        'attachment' => get_field('attachment', 15).' %s',
+        'tag' => get_field('tag', 15).' <b>%s</b>',
+        'tax_tag' => get_field('tax_tag', 15).' <b>%3$s</b>',
+        // tax_tag выведет: 'тип_записи из "название_таксы" по тегу: имя_термина'.
+        // Если нужны отдельные холдеры, например только имя термина, пишем так: 'записи по тегу: %3$s'
+    );
+}
 // удаляет H2 из шаблона пагинации
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2);
 function my_navigation_template($template, $class)

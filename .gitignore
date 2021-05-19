@@ -5,7 +5,7 @@
 # "mu-plugins", "plugins", "themes" directory
 wp-content/*
 !wp-content/mu-plugins/
-!wp-content/plugins/
+wp-content/plugins/
 !wp-content/themes/
 
 # ignore these plugins
@@ -24,3 +24,4 @@ node_modules/
 wp-content/themes/Education/img/����.jpg
 wp-config.php
 .gitignore
+.htaccess

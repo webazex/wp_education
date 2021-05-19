@@ -68,11 +68,11 @@ get_header();
                    <?php the_field('h2_feedback-title');?>
                     <div class="col__callback">
                         <form class="callback__form" action="" id="cForm" method="post" data-sender="<?php echo(get_template_directory_uri().'/back/mail/sender.php'); ?>">
-                            <input type="text" name="fio" required="required" placeholder="Имя">
-                            <input type="tel" name="tel" required="required" placeholder="Номер телефона">
+                            <input type="text" name="fio" required="required" placeholder="<?php the_field('name_p', 15);?>">
+                            <input type="tel" name="tel" required="required" placeholder="<?php the_field('phone_p', 15);?>">
                         <input type="hidden" value="cForm" name="type">
                             <button type="submit" class="btn-submit">
-                                <span class="btn-submit__text">Отправить</span>
+                                <span class="btn-submit__text"><?php the_field('s-btn_text', 15);?></span>
                             </button>
                             <div class="form__desc">
                                 <?php

@@ -32,7 +32,7 @@ $wp_query   = $posters;
 						<span class="title-blog__text"><?php the_title(); ?></span>
 					</h3>
 					<a href="<?php the_permalink();?>" class="item__link-blog">
-						<span class="link-blog__text">Читать</span>
+						<span class="link-blog__text"><?php the_field('r-btn_text', 15); ?></span>
 					</a>
 				</div>
                 <?php endwhile;?>
