@@ -477,6 +477,7 @@ h4 {
     top: 10px;
     right: 30px;
     z-index: 9;
+    margin: 0;
 }
 .menu_item_wpglobus_menu_switch:hover .sub-menu {
     display: block;
@@ -1815,7 +1816,7 @@ p strong {
         align-items: center;
         background-color: lightgrey;
     }
-    .menu_item_wpglobus_menu_switch .sub-menu {display: block;}
+    li.menu_item_wpglobus_menu_switch ul.sub-menu {display: block;}
     .menu_item_wpglobus_menu_switch > a {margin: 0 5px;}
     .site-size__breadcrumbs-row:before {content: none;}
     .site-size__breadcrumbs-row:after {margin-top: 60px;}
@@ -1991,6 +1992,7 @@ p strong {
     "logo logo phones phones phones phones"
     "text text text text text mobmenu";
     }
+    .header-grid__phones, .phones__phone {justify-content: flex-end;}
     .header-grid__logo-link > img {max-width: 200px;}
     h1, .content__blog h1 {
         font-size: 2.5rem;
@@ -2216,6 +2218,7 @@ p strong {
         grid-template-columns: 1fr;
         grid-template-areas: "img" "text_one" "text_two" "text_three" "text_four" "text_five";
     }
+    .header-grid__logo-link > img {max-width: 182px;}
 }
 
 @media (max-width: 580px) {
@@ -2292,7 +2295,8 @@ p strong {
     .header-grid__phones {
         flex-direction: column;
         padding-left: 20px;
-        align-items: flex-start;
+        /*align-items: flex-start;*/
+        align-items: flex-end;
     }
 
     .header-grid__text {
@@ -2428,6 +2432,7 @@ p strong {
     }
     .phones__phone:nth-child(1) {
         margin-bottom: 16px;
+        margin-right: 9px;
     }
     .content__grid-four-col {grid-template-columns: 1fr;}
     .title-card__text {
@@ -2545,7 +2550,9 @@ p strong {
     }
 
 }
-
+@media(max-width: 450px){
+    .header-grid__logo-link > img {max-width: 142px;}
+}
 @media (max-width: 360px) {
     .site-size__content {
         padding-top: 30px;
