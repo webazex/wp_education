@@ -479,7 +479,7 @@ h4 {
     z-index: 9;
     margin: 0;
 }
-#menuH li.menu_item_wpglobus_menu_switch {display: none;}
+#menuF li.menu_item_wpglobus_menu_switch {display: none;}
 .menu_item_wpglobus_menu_switch:hover .sub-menu {
     display: block;
     position: absolute;
