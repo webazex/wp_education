@@ -482,8 +482,8 @@ h4 {
 #menuF li.menu_item_wpglobus_menu_switch {display: none;}
 .menu_item_wpglobus_menu_switch:hover .sub-menu {
     display: block;
-    position: absolute;
-    top: 100%;
+    /*position: absolute;*/
+    position: relative;
     margin-top: 10px;
 }
 .menu_item_wpglobus_menu_switch:hover:after {
