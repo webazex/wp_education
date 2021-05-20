@@ -484,6 +484,7 @@ h4 {
     display: block;
     position: absolute;
     top: 100%;
+    margin-top: 10px;
 }
 .menu_item_wpglobus_menu_switch:hover:after {
     content: none;
