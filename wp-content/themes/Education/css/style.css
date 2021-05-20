@@ -495,7 +495,7 @@ h4 {
     margin: 0;
     padding: 0;
 }
-span.wpglobus_flag {
+span.wpglobus_flag, .wpglobus_flag {
     background-position: center;
     height: 22px;
     width: 30px;
@@ -1830,9 +1830,14 @@ p strong {
         top: unset;
     }
     .menu_item_wpglobus_menu_switch:hover {
+        flex-direction: row;
         display: block;
     }
-    li.menu_item_wpglobus_menu_switch ul.sub-menu {display: block;}
+    li.menu_item_wpglobus_menu_switch ul.sub-menu {
+        display: block;
+        position: static;
+        top: unset;
+    }
     .menu_item_wpglobus_menu_switch > a {margin: 0 5px;}
     .site-size__breadcrumbs-row:before {content: none;}
     .site-size__breadcrumbs-row:after {margin-top: 60px;}
