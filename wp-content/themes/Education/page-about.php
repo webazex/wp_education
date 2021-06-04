@@ -215,10 +215,7 @@ get_header();
                         </div>
                     <?php endif; ?>
                         <div class="grid-area__full-width-col">
-                            <p>Стоимость обучения фиксированная для всех специальностей.</p>
-                            <p>Также при поступлении вносится обязательный <span class="clr">единоразовый</span> взнос в
-                                размере 200 злотых.
-                            </p>
+                            <?php the_field('q_desc'); ?>
                         </div>
                     </div>
                 </div>

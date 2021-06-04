@@ -540,3 +540,7 @@ function renderCopyright()
     endif;
     return $copyright;
 }
+function getCurrentLang(){
+    $thisLang = WPGlobus::Config()->language;
+    return $thisLang;
+}

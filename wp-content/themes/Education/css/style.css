@@ -1315,7 +1315,13 @@ footer .content__menu li {margin: 5px 0;}
     text-align: center;
     margin-bottom: 30px;
 }
-
+.grid-area__full-width-col p span {
+    font-size: inherit;
+}
+.grid-area__full-width-col p strong *{
+    font-size: inherit;
+    font-weight: bold;
+}
 .grid-area__full-width-col p {
     margin-bottom: 0;
 }
