@@ -23,7 +23,6 @@
 
 	            <?php
 	            $logo = get_field('logo', 15);
-                var_dump(getCurrentLang());
 	            ?>
 
 

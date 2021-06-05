@@ -4,7 +4,8 @@ add_action('wp_head', 'sendDataJson');
 function sendDataJson()
 {
     $arData = array(
-        'submitMessage' => "Done"
+        'submitMessage' => get_field('submit_text'),
+        'errMessage' => get_field('err_text')
     );
     echo '<script> var JsonData =' . json_encode($arData) . '</script>';
 }
@@ -543,4 +544,10 @@ function renderCopyright()
 function getCurrentLang(){
     $thisLang = WPGlobus::Config()->language;
     return $thisLang;
+}
+add_filter( 'wpglobus_menu_items'. 'filter__menu_items', 10, 2 );
+function filter__menu_items( $menu_items, $languages) {
+    print_r($menu_items);
+    var_dump($languages);
+//    return $menu_items;
 }

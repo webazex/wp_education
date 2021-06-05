@@ -47,7 +47,8 @@ $(document).ready(function () {
         var url = $(this).closest("form").attr('data-sender');
         var idForm = $(this).closest("form").attr('id');
         var thisBtn = $(this);
-        var DefaultBg = thisBtn.css('background-color');
+        // var DefaultBg = thisBtn.css('background-color');
+        var DefaultBg = '#2878EB';
         var DefaultText = thisBtn.children('span').text();
         var thisInputStatus = [];
        $(this).closest('form').find('input[required="required"]').each(function () {
@@ -75,7 +76,8 @@ $(document).ready(function () {
             }, 3000);
         }else{
             sendAjaxForm(url, idForm);
-            thisBtn.css({'background-color':DefaultBg});
+            // $('.btn-submit').css({'background-color': '#2878EB'});
+            // thisBtn.css({'background-color':DefaultBg});
             thisBtn.children('span').text(DefaultText);
             thisBtn.removeAttr('disabled', "disabled");
             $(thisBtn).closest('form').find('input[required="required"]').each(function () {
@@ -85,27 +87,33 @@ $(document).ready(function () {
         }
 
     });
-    console.log(JSON.stringify(JsonData));
+    // console.log(JSON.stringify(JsonData));
     function sendAjaxForm(url, idForm) {
+        console.log((JsonData));
         $.ajax({
             url:     url, //url страницы (action_ajax_form.php)
             type:     "POST", //метод отправки
             dataType: "html", //формат данных
             data: $("#"+idForm).serialize(),  // Сеарилизуем объект
             success: function(response) { //Данные отправлены успешно
-
-                let res = '<div class="content__p-submit-container successed"><span class="container__close-icon">x</span><p>Отправлено</p></div>';
+                // $('.btn-submit').css({'background-color': '#2878EB'});
+                let res = '<div class="content__p-submit-container successed"><span class="container__close-icon">x</span><p>'+JsonData.submitMessage+'</p></div>';
                 $('.popups__content').append(res);
                 $('.popups').show(300);
 
             },
             error: function(response) { // Данные не отправлены
-                let res = '<div class="content__p-submit-container error-bg"><span class="container__close-icon">x</span><p>Ошибка отправки</p></div>';
+                // $('.btn-submit').css({'background-color': '#2878EB'});
+                let res = '<div class="content__p-submit-container error-bg"><span class="container__close-icon">x</span><p>'+JsonData.errMessage+'</p></div>';
                 $('.popups__content').append(res);
                 $('.popups').show(300);
             },
             complete: function () {
-
+                $('.btn-submit').css({'background-color': DefaultBg});
+                setTimeout(function () {
+                    $('.popups').hide(300);
+                    $('.popups__content').html('');
+                }, 3000);
             }
         });
 
