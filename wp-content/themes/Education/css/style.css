@@ -1624,6 +1624,9 @@ p strong {
     justify-content: flex-start;
     align-items: flex-start;
 }
+.item__link-img {
+
+}
 .grid-area-blog__item img {
     width: 100%;
     height: 100%;
