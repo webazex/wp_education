@@ -1,6 +1,6 @@
 <?php
 $headers = "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Письмо с сайта: \"https://pl-education.com.ua/\" info@pl-education.com.ua\r\n";
+$headers .= "info@pl-education.com.ua\r\n";
 $headers .= "Reply-To: info@pl-education.com.ua\r\n";
 require $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
 //$to = get_post_meta(15, 'callback_email')[0];
