@@ -434,23 +434,25 @@ add_filter('kama_breadcrumbs_default_args', function ($args) {
     return $args;
 });
 //===================add breadcrumbs localize
-function localizeBreadcrumbs(){
+function localizeBreadcrumbs()
+{
     return array(
         'home' => get_field('home_br_text', 15),
-        'paged' => get_field('paged', 15).' %d',
+        'paged' => get_field('paged', 15) . ' %d',
         '_404' => get_field('not-found', 15),
-        'search' => get_field('search', 15).' - <b>%s</b>',
-        'author' => get_field('author', 15).': <b>%s</b>',
-        'year' => get_field('year', 15).' <b>%d</b>',
-        'month' => get_field('month', 15).': <b>%s</b>',
+        'search' => get_field('search', 15) . ' - <b>%s</b>',
+        'author' => get_field('author', 15) . ': <b>%s</b>',
+        'year' => get_field('year', 15) . ' <b>%d</b>',
+        'month' => get_field('month', 15) . ': <b>%s</b>',
         'day' => get_field('day', 15),
-        'attachment' => get_field('attachment', 15).' %s',
-        'tag' => get_field('tag', 15).' <b>%s</b>',
-        'tax_tag' => get_field('tax_tag', 15).' <b>%3$s</b>',
+        'attachment' => get_field('attachment', 15) . ' %s',
+        'tag' => get_field('tag', 15) . ' <b>%s</b>',
+        'tax_tag' => get_field('tax_tag', 15) . ' <b>%3$s</b>',
         // tax_tag выведет: 'тип_записи из "название_таксы" по тегу: имя_термина'.
         // Если нужны отдельные холдеры, например только имя термина, пишем так: 'записи по тегу: %3$s'
     );
 }
+
 // удаляет H2 из шаблона пагинации
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2);
 function my_navigation_template($template, $class)
@@ -541,13 +543,25 @@ function renderCopyright()
     endif;
     return $copyright;
 }
-function getCurrentLang(){
+
+function getCurrentLang()
+{
     $thisLang = WPGlobus::Config()->language;
     return $thisLang;
 }
-add_filter( 'wpglobus_menu_items'. 'filter__menu_items', 10, 2 );
-function filter__menu_items( $menu_items, $languages) {
-    print_r($menu_items);
-    var_dump($languages);
-//    return $menu_items;
+
+add_filter('wpglobus_menu_items', 'filter__menu_items', 10, 2);
+function filter__menu_items($menu_items, $languages)
+{
+    switch ($languages[0]):
+        case "uk":
+            $menu_items[0]->url = "";
+            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/ru";
+            break;
+        case "ru":
+            $menu_items[0]->url = "";
+            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/";
+            break;
+    endswitch;
+    return $menu_items;
 }
