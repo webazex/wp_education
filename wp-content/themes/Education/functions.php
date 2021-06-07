@@ -553,14 +553,15 @@ function getCurrentLang()
 add_filter('wpglobus_menu_items', 'filter__menu_items', 10, 2);
 function filter__menu_items($menu_items, $languages)
 {
+    $slug = get_query_var ('pagename');
     switch ($languages[0]):
         case "uk":
             $menu_items[0]->url = "";
-            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/ru";
+            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/ru/".$slug;
             break;
         case "ru":
             $menu_items[0]->url = "";
-            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/";
+            $menu_items[1]->url = $_SERVER['HTTP_HOST'] . "/".$slug;
             break;
     endswitch;
     return $menu_items;
