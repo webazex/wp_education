@@ -26,7 +26,7 @@
 	            ?>
 
 
-            <a href="/" class="header-grid__logo-link"><img src="<?php echo $logo['url']; ?>" class="header-grid__logo" alt="<?php echo $logo['alt']; ?>"></a>
+            <a <?=getLinkToHome();?> class="header-grid__logo-link"><img src="<?php echo $logo['url']; ?>" class="header-grid__logo" alt="<?php echo $logo['alt']; ?>"></a>
             <div class="header-grid__phones">
                 <a href="tel:+380506780690" class="phones__phone">
                     <span class="phone__icon"></span>

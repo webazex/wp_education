@@ -565,3 +565,19 @@ function filter__menu_items($menu_items, $languages)
     endswitch;
     return $menu_items;
 }
+
+function getLinkToHome()
+{
+    switch (getCurrentLang()):
+        case "uk":
+            $href = "/";
+            break;
+        case "ru":
+            $href = "/ru";
+            break;
+        default:
+            $href = "/";
+            break;
+    endswitch;
+    return 'href="' . $href . '"';
+}
