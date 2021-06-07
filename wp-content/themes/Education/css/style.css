@@ -1726,6 +1726,11 @@ p strong {
     line-height: 2.5rem;
     margin-bottom: 0;
 }
+.content__blog p a {
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+}
 .content__blog h1:after, .content__blog h1:before,
 .content__blog h2:after, .content__blog h2:before{
     content: none;
