@@ -1625,7 +1625,11 @@ p strong {
     align-items: flex-start;
 }
 .item__link-img {
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 .grid-area-blog__item img {
     width: 100%;
