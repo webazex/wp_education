@@ -1,7 +1,7 @@
 <?php
 $headers = "Content-type: text/html; charset=utf-8 \r\n";
 $headers .= "From: Письмо с сайта: https://pl-education.com.ua/\r\n";
-$headers .= "Reply-To: reply-to@example.com\r\n";
+$headers .= "Reply-To: info@pl-education.com.ua\r\n";
 require $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
 //$to = get_post_meta(15, 'callback_email')[0];
 $to = get_field('callback_email', 15);
