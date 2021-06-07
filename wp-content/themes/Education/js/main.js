@@ -109,7 +109,7 @@ $(document).ready(function () {
                 $('.popups').show(300);
             },
             complete: function () {
-                $('.btn-submit').css({'background-color': DefaultBg});
+                // $('.btn-submit').css({'background-color': DefaultBg});
                 setTimeout(function () {
                     $('.popups').hide(300);
                     $('.popups__content').html('');
@@ -122,11 +122,16 @@ $(document).ready(function () {
         $('.popups').hide(300);
         $('.popups__content').html('');
     });
+    $('body').click(function () {
+        $('.popups').hide(300);
+        $('.popups__content').html('');
+        }
+    );
     $('#up').click(function() {
         $("html, body").animate({
             scrollTop:0
         },1000);
-    })
+    });
     $(window).scroll(function() {
         // если пользователь прокрутил страницу более чем на 200px
         if ($(this).scrollTop()>200) {
