@@ -3,7 +3,6 @@ $headers = "Content-type: text/html; charset=utf-8 \r\n";
 $headers .= "From: Письмо с сайта: https://pl-education.com.ua/\r\n";
 $headers .= "Reply-To: reply-to@example.com\r\n";
 require $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
-//ini_set( 'error_reporting', E_ALL );
 $to = get_post_meta(15, 'callback_email')[0];
 switch ( $_POST['type'] ):
 	case "fForm":
@@ -15,7 +14,6 @@ switch ( $_POST['type'] ):
 		$message   = ' Письмо от ' . $name . '<br> Номер для связи: ' . $phone . '<br> ' . $questions;
 		break;
 	case "cForm":
-		echo "cForm";
 		$subject = "Нужна обратная связь";
 		$message = '';
 		$name    = htmlspecialchars( strip_tags( $_POST['fio'] ));

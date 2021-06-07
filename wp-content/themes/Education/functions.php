@@ -4,7 +4,7 @@ add_action('wp_head', 'sendDataJson');
 function sendDataJson()
 {
     $arData = array(
-        'submitMessage' => get_field('submit_text'),
+        'submitMessage' => get_field('submit_text', 15),
         'errMessage' => get_field('err_text')
     );
     echo '<script> var JsonData =' . json_encode($arData) . '</script>';
