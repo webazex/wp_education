@@ -1637,6 +1637,9 @@ p strong {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .grid-area-blog__item:hover {
     -webkit-transition: all 0.5s ease-in-out;
