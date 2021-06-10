@@ -475,6 +475,7 @@ h4 {
     display: flex;
     align-items: center;
 }
+#menuF li.menu_item_wpglobus_menu_switch {display: none;}
 li.menu_item_wpglobus_menu_switch .sub-menu {display: block;}
 li.menu_item_wpglobus_menu_switch > a {
     padding-right: 5px;
