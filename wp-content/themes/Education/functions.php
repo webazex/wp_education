@@ -5,7 +5,7 @@ function sendDataJson()
 {
     $arData = array(
         'submitMessage' => get_field('submit_text', 15),
-        'errMessage' => get_field('err_text')
+        'errMessage' => get_field('err_text', 15)
     );
     echo '<script> var JsonData =' . json_encode($arData) . '</script>';
 }
