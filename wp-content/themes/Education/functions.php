@@ -582,3 +582,17 @@ function getLinkToHome()
     endswitch;
     return 'href="' . $href . '"';
 }
+function getLogoImg(){
+    switch (getCurrentLang()):
+        case "uk":
+            $logo = get_field('logo', 15);
+            break;
+        case "ru":
+            $logo = get_field('logo_ru', 15);
+            break;
+        default:
+            $logo = get_field('logo', 15);
+            break;
+    endswitch;
+    return $logo;
+}

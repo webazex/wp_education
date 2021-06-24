@@ -22,7 +22,7 @@
         <nav class="site-size__header-grid">
 
 	            <?php
-	            $logo = get_field('logo', 15);
+	            $logo = getLogoImg();
 	            ?>
 
 

@@ -21,7 +21,7 @@
     <div class="site-size">
         <nav class="site-size__header-grid">
             <?php
-                $logo = get_field('logo', 15);
+                $logo = getLogoImg();
             ?>
             <a <?=getLinkToHome();?> class="header-grid__logo-link"><img src="<?php echo $logo['url']; ?>" class="header-grid__logo-link" alt="<?php echo $logo['alt']; ?>"></a>
             <div class="header-grid__phones">
